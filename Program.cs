@@ -55,3 +55,21 @@
 // int num = Convert.ToInt32(Console.ReadLine());
 // kubNumbers(num);
 
+// Задача 25: Напишите цикл, который принимает на вход два числа (А и В) и возводит число А в степень В.
+void exponent(int number1, int number2)
+
+{
+    
+    for(int i = 1; i <= number2; i++)
+    {
+        number1 = number1 * number1;
+    }
+}
+
+
+Console.WriteLine("Введите число А ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число B ");
+int numberB = Convert.ToInt32(Console.ReadLine());
+
+exponent(numberA, numberB);
