@@ -57,13 +57,13 @@
 
 // Задача 25: Напишите цикл, который принимает на вход два числа (А и В) и возводит число А в степень В.
 void exponent(int number1, int number2)
-
 {
-    
-    for(int i = 1; i <= number2; i++)
+    int exp = 1;
+    for(int i = 0; i < number2; i++)
     {
-        number1 = number1 * number1;
+        exp = exp * number1;
     }
+    Console.WriteLine($"Число А в степени B равно {exp}");
 }
 
 
@@ -73,3 +73,19 @@ Console.WriteLine("Введите число B ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
 exponent(numberA, numberB);
+
+//Задача №27: Напишите программу, которая принимает на вход число и выдает сумму цифр в числе
+
+void sumNumbers(int number)
+{
+    int sum = 0;
+    while(number > 0)
+    {
+        sum = sum + number % 10;
+        number = number / 10;
+    } 
+    Console.WriteLine($"Сумма цифр равна {sum}");
+}
+Console.WriteLine("Введите число ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+sumNumbers(numberA);
