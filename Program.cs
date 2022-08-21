@@ -50,42 +50,155 @@
 //         n++;
 //     }
 // }
-        
+
 // Console.WriteLine("Введите число ");
 // int num = Convert.ToInt32(Console.ReadLine());
 // kubNumbers(num);
 
 // Задача 25: Напишите цикл, который принимает на вход два числа (А и В) и возводит число А в степень В.
-void exponent(int number1, int number2)
+// void exponent(int number1, int number2)
+// {
+//     int exp = 1;
+//     for(int i = 0; i < number2; i++)
+//     {
+//         exp = exp * number1;
+//     }
+//     Console.WriteLine($"Число А в степени B равно {exp}");
+// }
+
+
+// Console.WriteLine("Введите число А ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите число B ");
+// int numberB = Convert.ToInt32(Console.ReadLine());
+
+// exponent(numberA, numberB);
+
+// //Задача №27: Напишите программу, которая принимает на вход число и выдает сумму цифр в числе
+
+// void sumNumbers(int number)
+// {
+//     int sum = 0;
+//     while(number > 0)
+//     {
+//         sum = sum + number % 10;
+//         number = number / 10;
+//     } 
+//     Console.WriteLine($"Сумма цифр равна {sum}");
+// }
+// Console.WriteLine("Введите число ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// sumNumbers(numberA);
+
+//Задача 34 
+int[] CreateRandomArray(int N, int start, int end)
 {
-    int exp = 1;
-    for(int i = 0; i < number2; i++)
+    int[] RandomArray = new int[N];
+    for (int i = 0; i < N; i++)
     {
-        exp = exp * number1;
+        RandomArray[i] = new Random().Next(start, end + 1);
     }
-    Console.WriteLine($"Число А в степени B равно {exp}");
+    return RandomArray;
 }
 
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
 
-Console.WriteLine("Введите число А ");
-int numberA = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число B ");
-int numberB = Convert.ToInt32(Console.ReadLine());
+int[] array = CreateRandomArray(4, 100, 1000);
+ShowArray(array);
 
-exponent(numberA, numberB);
+void chetNumber(int[] array)
+{
+    int n = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
 
-//Задача №27: Напишите программу, которая принимает на вход число и выдает сумму цифр в числе
+        if (array[i] % 2 == 0) n++;
+    }
+    Console.WriteLine($"{n} - четных числа");
+}
+chetNumber(array);
 
-void sumNumbers(int number)
+//Задача 36
+int[] CreateRandomArray(int N, int start, int end)
+{
+    int[] RandomArray = new int[N];
+    for (int i = 0; i < N; i++)
+    {
+        RandomArray[i] = new Random().Next(start, end + 1);
+    }
+    return RandomArray;
+}
+
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
+
+int[] array = CreateRandomArray(4, -100, 100);
+ShowArray(array);
+
+void sumNechetPos(int[] array)
 {
     int sum = 0;
-    while(number > 0)
+    for (int i = 0; i < array.Length; i = i + 2)
     {
-        sum = sum + number % 10;
-        number = number / 10;
-    } 
-    Console.WriteLine($"Сумма цифр равна {sum}");
+        sum = sum + array[i];
+    }
+    Console.WriteLine($"{sum} - сумма сумма элементов на нечетных позициях");
 }
-Console.WriteLine("Введите число ");
-int numberA = Convert.ToInt32(Console.ReadLine());
-sumNumbers(numberA);
+sumNechetPos(array);
+
+//Задача 38
+int[] CreateRandomArray(int N, int start, int end)
+{
+    int[] RandomArray = new int[N];
+    for (int i = 0; i < N; i++)
+    {
+        RandomArray[i] = new Random().Next(start, end + 1);
+    }
+    return RandomArray;
+}
+
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
+
+int[] array = CreateRandomArray(4, 0, 100);
+ShowArray(array);
+
+void diffMaxMin(int[] array)
+{
+    int max = array[0];
+    int min = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+        }
+        if (array[i] < min)
+        {
+            min = array[i];
+        }
+    }
+    Console.WriteLine($"{max} - максимальное, {min} - минимальное");
+    Console.WriteLine($"{max - min} - разница между максимальным и минимальным элементом массива");
+}
+
+diffMaxMin(array);
