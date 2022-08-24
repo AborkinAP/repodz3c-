@@ -91,83 +91,130 @@
 // sumNumbers(numberA);
 
 //Задача 34 
-int[] CreateRandomArray(int N, int start, int end)
-{
-    int[] RandomArray = new int[N];
-    for (int i = 0; i < N; i++)
-    {
-        RandomArray[i] = new Random().Next(start, end + 1);
-    }
-    return RandomArray;
-}
+// int[] CreateRandomArray(int N, int start, int end)
+// {
+//     int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//         RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
 
-void ShowArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.WriteLine();
-}
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
 
-int[] array = CreateRandomArray(4, 100, 1000);
-ShowArray(array);
+// int[] array = CreateRandomArray(4, 100, 1000);
+// ShowArray(array);
 
-void chetNumber(int[] array)
-{
-    int n = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
+// void chetNumber(int[] array)
+// {
+//     int n = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
 
-        if (array[i] % 2 == 0) n++;
-    }
-    Console.WriteLine($"{n} - четных числа");
-}
-chetNumber(array);
+//         if (array[i] % 2 == 0) n++;
+//     }
+//     Console.WriteLine($"{n} - четных числа");
+// }
+// chetNumber(array);
 
 //Задача 36
-int[] CreateRandomArray(int N, int start, int end)
-{
-    int[] RandomArray = new int[N];
-    for (int i = 0; i < N; i++)
-    {
-        RandomArray[i] = new Random().Next(start, end + 1);
-    }
-    return RandomArray;
-}
+// int[] CreateRandomArray(int N, int start, int end)
+// {
+//     int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//         RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
 
-void ShowArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.WriteLine();
-}
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
 
-int[] array = CreateRandomArray(4, -100, 100);
-ShowArray(array);
+// int[] array = CreateRandomArray(4, -100, 100);
+// ShowArray(array);
 
-void sumNechetPos(int[] array)
-{
-    int sum = 0;
-    for (int i = 0; i < array.Length; i = i + 2)
-    {
-        sum = sum + array[i];
-    }
-    Console.WriteLine($"{sum} - сумма сумма элементов на нечетных позициях");
-}
-sumNechetPos(array);
+// void sumNechetPos(int[] array)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < array.Length; i = i + 2)
+//     {
+//         sum = sum + array[i];
+//     }
+//     Console.WriteLine($"{sum} - сумма сумма элементов на нечетных позициях");
+// }
+// sumNechetPos(array);
 
 //Задача 38
-int[] CreateRandomArray(int N, int start, int end)
+// int[] CreateRandomArray(int N, int start, int end)
+// {
+//     int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//         RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
+
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int[] array = CreateRandomArray(4, 0, 100);
+// ShowArray(array);
+
+// void diffMaxMin(int[] array)
+// {
+//     int max = array[0];
+//     int min = array[0];
+//     for (int i = 1; i < array.Length; i++)
+//     {
+//         if (array[i] > max)
+//         {
+//             max = array[i];
+//         }
+//         if (array[i] < min)
+//         {
+//             min = array[i];
+//         }
+//     }
+//     Console.WriteLine($"{max} - максимальное, {min} - минимальное");
+//     Console.WriteLine($"{max - min} - разница между максимальным и минимальным элементом массива");
+// }
+
+// diffMaxMin(array);
+
+//Задача 41
+int[] CreateArray()
 {
-    int[] RandomArray = new int[N];
-    for (int i = 0; i < N; i++)
-    {
-        RandomArray[i] = new Random().Next(start, end + 1);
+    Console.WriteLine("Введите количество элементов массива");
+    int size = Convert.ToInt32(Console.ReadLine());
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {   
+        Console.WriteLine($"Введите {i+1} элемент массива");
+        array[i] = Convert.ToInt32(Console.ReadLine());
     }
-    return RandomArray;
+    return array;
 }
 
 void ShowArray(int[] array)
@@ -179,26 +226,40 @@ void ShowArray(int[] array)
     Console.WriteLine();
 }
 
-int[] array = CreateRandomArray(4, 0, 100);
-ShowArray(array);
-
-void diffMaxMin(int[] array)
-{
-    int max = array[0];
-    int min = array[0];
-    for (int i = 1; i < array.Length; i++)
+ void countNumMoreZiro(int[] array)
+ {
+    int countNum = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] > max)
-        {
-            max = array[i];
-        }
-        if (array[i] < min)
-        {
-            min = array[i];
-        }
+        if(array[i] > 0) countNum++;
     }
-    Console.WriteLine($"{max} - максимальное, {min} - минимальное");
-    Console.WriteLine($"{max - min} - разница между максимальным и минимальным элементом массива");
-}
+    Console.WriteLine($"{countNum}  - количество введенных положительных элементов массива");
+ }
 
-diffMaxMin(array);
+int[] array = CreateArray();
+ShowArray(array);
+countNumMoreZiro(array);
+
+//Задача 43
+void crossline()
+{
+    Console.WriteLine("Введите b1");
+    double b1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите k1");
+    double k1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите b2");
+    double b2 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите k2");
+    double k2 = Convert.ToInt32(Console.ReadLine());
+    if (k1 != k2)
+    {
+        double x = (b2 - b1) / (k1 - k2);
+        double y = k1 * x + b1;
+        Console.WriteLine($"{(x, y)}  - точка пересечения линий заданых функциями y = k1 * x + b1 и y = k2 * x + b2");
+    }
+    else
+    {
+        Console.WriteLine($"Линии параллельны");
+    }
+}
+crossline();
