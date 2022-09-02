@@ -720,3 +720,4 @@ void AddPosNum(int[,,] array)
 int[,,] arr = CreateArray(rows, colums, depth, min, max);
 PrintArray(arr);
 AddPosNum(arr);
+
