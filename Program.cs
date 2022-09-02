@@ -265,39 +265,298 @@
 // crossline();
 
 //Задача 47
-Console.WriteLine("Введите количество строк массива: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов массива: ");
-int colums = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int colums = Convert.ToInt32(Console.ReadLine());
 
-double[,] CreateDoubleArray(int a, int b, int minValue, int maxValue)
-{
-    double[,] array = new double[a, b];
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            array[i, j] = new Random().Next(minValue, maxValue + 1) + new Random().NextDouble();
-        }
-    }
-    return array;
-}
+// double[,] CreateDoubleArray(int a, int b, int minValue, int maxValue)
+// {
+//     double[,] array = new double[a, b];
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int j = 0; j < b; j++)
+//         {
+//             array[i, j] = new Random().Next(minValue, maxValue + 1) + new Random().NextDouble();
+//         }
+//     }
+//     return array;
+// }
 
-void PrintArray(double[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write($"{array[i, j]:f1} ");
-        }
-        Console.WriteLine();
-    }
-}
-double[,] arr = CreateDoubleArray(rows, colums, -10, 10);
-PrintArray(arr);
+// void PrintArray(double[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]:f1} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// double[,] arr = CreateDoubleArray(rows, colums, -10, 10);
+// PrintArray(arr);
+
+// //Задача 50
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int colums = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для массива: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для массива: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] CreateArray(int a, int b, int minValue, int maxValue)
+// {
+//     int[,] array = new int[a, b];
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int j = 0; j < b; j++)
+//         {
+//             array[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[,] array)
+
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FindElements(int[,] array, int number)
+// {
+//     int n = 0; //счетчик позиций в массиве, которые не совпадают с проверяемым числом
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+
+//             if (number == array[i, j])
+//             {
+//                 Console.Write($"{(i, j)}, ");
+//             }
+//             else
+//             {
+//                 n++;
+//             }
+//         }
+//     }
+//     if (n == array.GetLength(0) * array.GetLength(1))
+//     {
+//         Console.Write($"числа {number} нет в массиве");
+//     }
+//     else
+//     {
+//         Console.Write($"позиции числа {number} в массиве");
+//     }
+// }
+// int[,] arr = CreateArray(rows, colums, min, max);
+// PrintArray(arr);
+// Console.WriteLine("Введите искомое число  в массиве: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// FindElements(arr, num);
+
+// //Задача 52
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int colums = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для массива: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для массива: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] CreateArray(int a, int b, int minValue, int maxValue)
+// {
+//     int[,] array = new int[a, b];
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int j = 0; j < b; j++)
+//         {
+//             array[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void AvarageArifmColums(int[,] array)
+// {
+//     double n = 0;
+//     int count = 0;
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             n = n + array[i, j];
+//             count++;
+//         }
+//         Console.Write($"{(n / count):f1} ");
+//         n = 0;
+//         count = 0;
+//     }
+//     Console.Write(" - среднее арифметическое каждого столбца ");
+// }
+// int[,] arr = CreateArray(rows, colums, min, max);
+// PrintArray(arr);
+// AvarageArifmColums(arr);
 
 //Задача 50
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int colums = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для массива: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для массива: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] CreateArray(int a, int b, int minValue, int maxValue)
+// {
+//     int[,] array = new int[a, b];
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int j = 0; j < b; j++)
+//         {
+//             array[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[,] array)
+
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FindElements(int[,] array, int number)
+// {
+//     int n = 0; //счетчик позиций в массиве, которые не совпадают с проверяемым числом
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+
+//             if (number == array[i, j])
+//             {
+//                 Console.Write($"{(i, j)}, ");
+//             }
+//             else
+//             {
+//                 n++;
+//             }
+//         }
+//     }
+//     if (n == array.GetLength(0) * array.GetLength(1))
+//     {
+//         Console.Write($"числа {number} нет в массиве");
+//     }
+//     else
+//     {
+//         Console.Write($"позиции числа {number} в массиве");
+//     }
+// }
+// 
+
+//Задача 54
+Console.WriteLine("Введите количество строк массива: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов массива: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для массива: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для массива: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] CreateArray(int a, int b, int minValue, int maxValue)
+{
+    int[,] array = new int[a, b];
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return array;
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void SortNumberForMax(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1) - 1; j++)
+        {
+            int max = array[i, j];
+            int m = j;
+            for (int k = j + 1; k < array.GetLength(1); k++)
+            {
+                if (array[i, k] > max)
+                {
+                    max = array[i, k];
+                    m = k;
+                }
+                // Console.Write($"{array[i, j]}");
+            }
+            int temp = 0;
+            if (m != j)
+            {
+                temp = array[i, j];
+                array[i, j] = array[i, m];
+                array[i, m] = temp;
+            }
+        }
+    }
+    Console.WriteLine($"{string.Join(" ", array)}");
+}
+
+int[,] arr = CreateArray(rows, colums, min, max);
+PrintArray(arr);
+SortNumberForMax(arr);
+PrintArray(arr);
+
+//Задача 56
 Console.WriteLine("Введите количество строк массива: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов массива: ");
@@ -333,63 +592,43 @@ void PrintArray(int[,] array)
     }
 }
 
-void FindElements(int[,] array, int number)
+void FindMaxSumNumRow(int[,] array)
 {
-    int n = 0; //счетчик позиций в массиве, которые не совпадают с проверяемым числом
+    int[] arr = new int[array.GetLength(0)];
     for (int i = 0; i < array.GetLength(0); i++)
     {
+        int sumNum = 0;
         for (int j = 0; j < array.GetLength(1); j++)
         {
+            sumNum += array[i, j];
+        }
+        arr[i] = sumNum;
+    }
 
-            if (number == array[i, j])
-            {
-                Console.Write($"{(i, j)}, ");
-            }
-            else
-            {
-                n++;
-            }
+    int minSum = arr[0];
+    int numStr = 1;
+    for (int k = 1; k < arr.Length; k++)
+    {
+        if (arr[k] < minSum)
+        {
+            minSum = arr[k];
+            numStr = k + 1;
         }
     }
-    if (n == array.GetLength(0) * array.GetLength(1))
-    {
-        Console.Write($"числа {number} нет в массиве");
-    }
-    else
-    {
-        Console.Write($"позиции числа {number} в массиве");
-    }
+    Console.WriteLine($"{string.Join(" ", arr)}");
+    Console.Write($"{numStr} - строка содержит минимальную сумму чисел");
 }
+
 int[,] arr = CreateArray(rows, colums, min, max);
 PrintArray(arr);
-Console.WriteLine("Введите искомое число  в массиве: ");
-int num = Convert.ToInt32(Console.ReadLine());
-FindElements(arr, num);
+FindMaxSumNumRow(arr);
 
-//Задача 52
-Console.WriteLine("Введите количество строк массива: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов массива: ");
-int colums = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для массива: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для массива: ");
-int max = Convert.ToInt32(Console.ReadLine());
-
-int[,] CreateArray(int a, int b, int minValue, int maxValue)
-{
-    int[,] array = new int[a, b];
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            array[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return array;
-}
+//Задача 58
+int[,] arr1 = new int[2, 2] { { 2, 4 }, { 3, 2 } };
+int[,] arr2 = new int[2, 2] { { 3, 4 }, { 3, 3 } };
 
 void PrintArray(int[,] array)
+
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -401,23 +640,84 @@ void PrintArray(int[,] array)
     }
 }
 
-void AvarageArifmColums(int[,] array)
+int[,] MultTwoMatrix(int[,] array1, int[,] array2)
 {
-    double n = 0;
-    int count = 0;
-    for (int j = 0; j < array.GetLength(1); j++)
+    int[,] array3 = new int[array1.GetLength(0), array1.GetLength(1)];
+    for (int i = 0; i < array1.GetLength(0); i++)
     {
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array1.GetLength(0); j++)
         {
-            n = n + array[i, j];
-            count++;
+            for (int k = 0; k < array1.GetLength(0); k++)
+            {
+                array3[i, j] += array1[i, k] * array2[k, j];
+            }
         }
-        Console.Write($"{(n / count):f1} ");
-        n = 0;
-        count = 0;
     }
-    Console.Write(" - среднее арифметическое каждого столбца ");
+    return array3;
 }
-int[,] arr = CreateArray(rows, colums, min, max);
+
+int[,] arr3 = MultTwoMatrix(arr1, arr2);
+PrintArray(arr3);
+
+//Задача 60
+Console.WriteLine("Введите количество строк куба: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов куба: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите значение глубины куба: ");
+int depth = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для куба: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для куба: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,,] CreateArray(int a, int b, int c, int minValue, int maxValue)
+{
+    int[,,] array = new int[a, b, c];
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            for (int k = 0; k < c; k++)
+            {
+                array[i, j, k] = new Random().Next(minValue, maxValue + 1);
+            }
+        }
+    }
+    return array;
+}
+
+void PrintArray(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j, k]} ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+void AddPosNum(int[,,] array)
+{
+    string[,,] arr = new string[array.GetLength(0), array.GetLength(1), array.GetLength(2)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j, k]} ({i}, {j}, {k}) ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+int[,,] arr = CreateArray(rows, colums, depth, min, max);
 PrintArray(arr);
-AvarageArifmColums(arr);
+AddPosNum(arr);
+
