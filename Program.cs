@@ -819,4 +819,49 @@ int[,,] arr = CreateArray(rows, colums, depth, min, max);
 PrintArray(arr);
 AddPosNum(arr);
 
->>>>>>> aae8ea44f7f3946354ac9d4e95e279f7fb5ce081
+>>>>>>> aae8ea44f7f3946354ac9d4e95e279f7f
+//Задача 64
+Console.WriteLine("Введите число М ");
+int M = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число N ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+NutNumbers(M, N);
+
+void NutNumbers(int start, int end)
+{
+    if (start > end) return;
+    Console.Write($"{start} ");
+    NutNumbers(start + 1, end);
+}
+
+//Задача 66
+Console.WriteLine("Введите число М ");
+int M = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число N ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+int sum = SumNutNumbers(M, N);
+Console.Write($"{sum}");
+
+int SumNutNumbers(int start, int end)
+{
+    if (start > end) return 0;
+    return (start + SumNutNumbers(start + 1, end));
+}
+
+//Задача 68
+Console.WriteLine("Введите число N ");
+int M = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число M ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+int n = A(N, M);
+Console.Write($"{n}");
+
+int A(int n, int m)
+{
+    if (n == 0) return m + 1;
+    else if ((n != 0) && (M == 0)) return A(n - 1, 1);
+    else return A(N - 1, A(n, n - 1));
+}
