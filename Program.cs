@@ -690,134 +690,134 @@ int max = Convert.ToInt32(Console.ReadLine());
 // PrintArray(arr);
 // AvarageArifmColums(arr);
 =======
-void FindMaxSumNumRow(int[,] array)
-{
-    int[] arr = new int[array.GetLength(0)];
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        int sumNum = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            sumNum += array[i, j];
-        }
-        arr[i] = sumNum;
-    }
+// void FindMaxSumNumRow(int[,] array)
+// {
+//     int[] arr = new int[array.GetLength(0)];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         int sumNum = 0;
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             sumNum += array[i, j];
+//         }
+//         arr[i] = sumNum;
+//     }
 
-    int minSum = arr[0];
-    int numStr = 1;
-    for (int k = 1; k < arr.Length; k++)
-    {
-        if (arr[k] < minSum)
-        {
-            minSum = arr[k];
-            numStr = k + 1;
-        }
-    }
-    Console.WriteLine($"{string.Join(" ", arr)}");
-    Console.Write($"{numStr} - строка содержит минимальную сумму чисел");
-}
+//     int minSum = arr[0];
+//     int numStr = 1;
+//     for (int k = 1; k < arr.Length; k++)
+//     {
+//         if (arr[k] < minSum)
+//         {
+//             minSum = arr[k];
+//             numStr = k + 1;
+//         }
+//     }
+//     Console.WriteLine($"{string.Join(" ", arr)}");
+//     Console.Write($"{numStr} - строка содержит минимальную сумму чисел");
+// }
 
-int[,] arr = CreateArray(rows, colums, min, max);
-PrintArray(arr);
-FindMaxSumNumRow(arr);
+// int[,] arr = CreateArray(rows, colums, min, max);
+// PrintArray(arr);
+// FindMaxSumNumRow(arr);
 
-//Задача 58
-int[,] arr1 = new int[2, 2] { { 2, 4 }, { 3, 2 } };
-int[,] arr2 = new int[2, 2] { { 3, 4 }, { 3, 3 } };
+// //Задача 58
+// int[,] arr1 = new int[2, 2] { { 2, 4 }, { 3, 2 } };
+// int[,] arr2 = new int[2, 2] { { 3, 4 }, { 3, 3 } };
 
-void PrintArray(int[,] array)
+// void PrintArray(int[,] array)
 
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write($"{array[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
-int[,] MultTwoMatrix(int[,] array1, int[,] array2)
-{
-    int[,] array3 = new int[array1.GetLength(0), array1.GetLength(1)];
-    for (int i = 0; i < array1.GetLength(0); i++)
-    {
-        for (int j = 0; j < array1.GetLength(0); j++)
-        {
-            for (int k = 0; k < array1.GetLength(0); k++)
-            {
-                array3[i, j] += array1[i, k] * array2[k, j];
-            }
-        }
-    }
-    return array3;
-}
+// int[,] MultTwoMatrix(int[,] array1, int[,] array2)
+// {
+//     int[,] array3 = new int[array1.GetLength(0), array1.GetLength(1)];
+//     for (int i = 0; i < array1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array1.GetLength(0); j++)
+//         {
+//             for (int k = 0; k < array1.GetLength(0); k++)
+//             {
+//                 array3[i, j] += array1[i, k] * array2[k, j];
+//             }
+//         }
+//     }
+//     return array3;
+// }
 
-int[,] arr3 = MultTwoMatrix(arr1, arr2);
-PrintArray(arr3);
+// int[,] arr3 = MultTwoMatrix(arr1, arr2);
+// PrintArray(arr3);
 
-//Задача 60
-Console.WriteLine("Введите количество строк куба: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов куба: ");
-int colums = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите значение глубины куба: ");
-int depth = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для куба: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для куба: ");
-int max = Convert.ToInt32(Console.ReadLine());
+// //Задача 60
+// Console.WriteLine("Введите количество строк куба: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов куба: ");
+// int colums = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите значение глубины куба: ");
+// int depth = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное значание диапазона генерируемых чисел для куба: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное значание диапазона генерируемых чисел для куба: ");
+// int max = Convert.ToInt32(Console.ReadLine());
 
-int[,,] CreateArray(int a, int b, int c, int minValue, int maxValue)
-{
-    int[,,] array = new int[a, b, c];
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            for (int k = 0; k < c; k++)
-            {
-                array[i, j, k] = new Random().Next(minValue, maxValue + 1);
-            }
-        }
-    }
-    return array;
-}
+// int[,,] CreateArray(int a, int b, int c, int minValue, int maxValue)
+// {
+//     int[,,] array = new int[a, b, c];
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int j = 0; j < b; j++)
+//         {
+//             for (int k = 0; k < c; k++)
+//             {
+//                 array[i, j, k] = new Random().Next(minValue, maxValue + 1);
+//             }
+//         }
+//     }
+//     return array;
+// }
 
-void PrintArray(int[,,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(2); k++)
-            {
-                Console.Write($"{array[i, j, k]} ");
-            }
-            Console.WriteLine();
-        }
-    }
-}
+// void PrintArray(int[,,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.Write($"{array[i, j, k]} ");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
 
-void AddPosNum(int[,,] array)
-{
-    string[,,] arr = new string[array.GetLength(0), array.GetLength(1), array.GetLength(2)];
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(2); k++)
-            {
-                Console.Write($"{array[i, j, k]} ({i}, {j}, {k}) ");
-            }
-            Console.WriteLine();
-        }
-    }
-}
-int[,,] arr = CreateArray(rows, colums, depth, min, max);
-PrintArray(arr);
-AddPosNum(arr);
+// void AddPosNum(int[,,] array)
+// {
+//     string[,,] arr = new string[array.GetLength(0), array.GetLength(1), array.GetLength(2)];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.Write($"{array[i, j, k]} ({i}, {j}, {k}) ");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+// int[,,] arr = CreateArray(rows, colums, depth, min, max);
+// PrintArray(arr);
+// AddPosNum(arr);
 
 >>>>>>> aae8ea44f7f3946354ac9d4e95e279f7f
 //Задача 64
